@@ -49,7 +49,7 @@
 
 ## 🔗 Projeto On-line
 Este projeto está disponível para visualização on-line. <br />
-Você pode acessá-lo através do link: https://todo-list-advanced-henna.vercel.app/
+Você pode acessá-lo através do link: https://box-shadow-pi.vercel.app/
 
 <br />
 
