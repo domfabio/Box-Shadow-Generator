@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+    font-family: "inter";
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    margin-bottom: 1.6rem;
+    text-align: center;
+    color: #333;
+}
+
+body{
+    background-color: #fafafa;
+}
+
+#box-shadow-generator {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#controls-container,
+#preview {
+    flex: 1;
+    padding: 3rem;
+}
+
+/* Controls */
+.form-control {
+    display: flex;
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.2rem;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.form-control label {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #696969;
+}
+
+.range-input {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.range-input input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 24px;
+    background: #f0f0f0;
+    outline: none;
+}
+
+.range-input input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #36e38a;
+    cursor: grab;
+}
+
+.range-input input[type="range"]::-webkit-slider-thumb:active {
+    cursor: grabbing;
+}
+
+.reference-input {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: -5px;
+}
+
+.reference-input p {
+    margin-left: 4px;
+    padding-bottom: 10px;
+}
+
+.form-control input[type="text"] {
+    height: 30px;
+    width: 40px;
+    margin-left: 1rem;
+    text-align: center;
+}
+
+/* Preview */
+#box {
+    width: 100%;
+    height: 380px;
+    background-color: #cccccc;
+}
+
+/* Área de geração */
+#generated-rule {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 0 2rem;
+}
+
+#generated-rule p {
+    margin-bottom: 0.5rem;
+}
+
+#rules-area {
+    background-color: #efefef;
+    max-width: 900px;
+    margin: 0 auto;
+    border: 2px solid #36e38a;
+    padding: 1rem;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#rules-area:hover {
+    background-color: #dfdfdf;
+}
+
+#copy-instructions {
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+
+/* Novas funcionalidades */
+#color-value {
+    min-width: 100px;
+}
+
+#inset {
+    align-self: start;
+    height: 20px;
+    width: 20px;
+}
+
+/* Responsivo */
+@media screen and (max-width: 425px) {
+    #box-shadow-generator{
+        flex-direction: column;
+    }
+
+    #controls-container,
+    #preview {
+        padding: 1rem 2rem;
+    }
+
+    #box{
+        width: 60%;
+        height: 200px;
+        margin: 0 auto;
+    }
+
+    #generated-rule{
+        margin-top: 2rem;
+    }
+    
+}
+
+/* Toggle Switch para Dark Mode */
+#toggle-dark-mode {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 25px;
+    background-color: #ccc;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+/* Indicador interno do toggle */
+#toggle-dark-mode::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+}
+
+/* Estilo do toggle quando o modo escuro está ativo */
+#toggle-dark-mode.active {
+    background-color: #36e38a;
+}
+
+#toggle-dark-mode.active::before {
+    transform: translateX(25px);
+}
+
+/* Modo Escuro */
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+body.dark-mode h2 {
+    color: #d3d3d3;
+}
+
+body.dark-mode #rules-area {
+    background-color: #333333;
+    color: #ffffff;
+    border-color: #36e38a;
+}
+
+body.dark-mode #rules-area:hover {
+    background-color: #2a2a2a;
+}
+
+body.dark-mode #box {
+    background-color: #444444;
+}
+
+body.dark-mode input[type="range"]::-webkit-slider-thumb {
+    background: #36e38a;
+}
+
+body.dark-mode #copy-instructions {
+    color: #bbbbbb;
+}
